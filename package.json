@@ -2,14 +2,12 @@
   "name": "udp-server",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Gustavo Zanoni <gutavato@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "eslint": "^7.16.0"
-  }
+  "devDependencies": {}
 }
