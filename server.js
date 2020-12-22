@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3001;
+
 const dgram = require('dgram');
 const server = dgram.createSocket('udp4');
 
@@ -15,5 +17,4 @@ server.on('listening', () => {
     console.log(`server listening ${address.address}:${address.port}`);
 });
 
-var port = process.env.PORT || 41234;
-server.bind(port);
+server.bind(PORT);
