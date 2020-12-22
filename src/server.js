@@ -1,20 +1,15 @@
 const PORT = process.env.PORT || 3001;
 
-const dgram = require('dgram');
-const server = dgram.createSocket('udp4');
+const Connection = require("./connection.js");
 
-server.on('error', (err) => {
-    console.log(`Server error:\n${err.stack}`);
-    server.close();
-});
+const server = new Connection();
+server.bind(PORT);
 
 server.on('message', (msg, rinfo) => {
     console.log(`Received: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
-server.on('listening', () => {
+server.on('listening', (err) => {
     const address = server.address();
     console.log(`Server listening on ${address.address}:${address.port}`);
 });
-
-server.bind(PORT);
